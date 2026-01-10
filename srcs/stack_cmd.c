@@ -6,7 +6,7 @@
 /*   By: jsantini <jsantini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:09:04 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/09 13:58:04 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/09 17:08:38 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,68 @@ void	aff_lst(t_list *head)
 {
 	while (head)
 	{
-		ft_printf("|%d|\n", head->value);
+		ft_printf("%p --> |%d| price: %d target: %p --> |%d|\n", head, head->value, head->price, head->target, head->target->value);
 		head = head->next;
 	}
 	return ;
+}
+
+t_list	*get_min(t_list *head)
+{
+	t_list	*min;
+
+	min = head;
+	while (head)
+	{
+		if (head->value <= min->value)
+			min = head;
+		head = head->next;
+	}
+	return (min);
+}
+
+void	get_target(t_list *head)
+{
+	t_list	*cycle;
+	t_list	*target;
+	t_list	*ori;
+
+	cycle = head;
+	ori = head;
+	while (cycle)
+	{
+		target = NULL;
+		head = ori;
+		while (head)
+		{
+			if (head->value > cycle->value)
+				if (!target || head->value < target->value)
+					target = head;
+			head = head->next;
+		}
+		if (target)
+			cycle->target = target;
+		else
+			cycle->target = get_min(ori);
+		cycle = cycle->next;
+	}
+	return ;
+}
+
+void	get_price(t_list *head)
+{
+	int	size_l;
+	int	i;
+
+	size_l = ft_lstsize(head);
+	i = 1;
+	while (head)
+	{
+		if (i >= (size_l / 2) + 1)
+			head->price = (size_l - i + 1);
+		else
+			head->price = i;
+		i++;
+		head = head->next;
+	}
 }

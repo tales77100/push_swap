@@ -17,6 +17,8 @@
 
 void	algo(t_list *head);
 void	aff_lst(t_list *head);
+void	get_target(t_list *head);
+void	get_price(t_list *head);
 
 void	*push_list(t_list **head, t_list *new);
 

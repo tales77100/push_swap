@@ -6,7 +6,7 @@
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 12:29:24 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/11 15:27:29 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:53:01 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void	sort_three(t_list **h)
 	return ;
 }
 
-void	sorting(t_list *a, t_list *b)
+void	sorting(t_list **a, t_list **b)
 {
-	sort_three(&a);
-	get_price(a);
-	get_price(b);
-	while (ft_lstsize(b) > 0)
-		pa(&a, &b);
-	//aff(a, b);
+	sort_three(a);
+	get_price(*a);
+	get_price(*b);
+	while (ft_lstsize(*b) > 0)
+		pa(a, b);
+	aff(*a, *b);
 	return ;
 }
 
@@ -80,6 +80,7 @@ void	algo(t_list *a)
 	if (size_l == 3)
 		return (sort_three(&a));
 	smart_push(size_l, &a, b);
-	sorting(a, *b);
+	sorting(&a, b);
+	ft_lstclear(&a, &free);
 	return ;
 }

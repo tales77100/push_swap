@@ -6,7 +6,7 @@
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:26:17 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/08 12:27:26 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:41:24 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 	int			value;
 	int			price;
 	int			place;
+	int			size;
 }	t_list;
 //-------------------//
 

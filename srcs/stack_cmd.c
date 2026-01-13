@@ -6,7 +6,7 @@
 /*   By: jsantini <jsantini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:09:04 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/11 15:14:46 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/13 19:21:59 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ void	get_price(t_list *head)
 		else
 			head->price = i;
 		head->place = i - 1;
+		head->size = size_l;
 		i++;
 		head = head->next;
 	}

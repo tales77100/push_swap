@@ -6,7 +6,7 @@
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 09:27:51 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/09 15:58:22 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/13 18:41:42 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_list	*ft_lstnew(int content)
 	final->target = final;
 	final->price = -1;
 	final->place = -1;
+	final->size = -1;
 	return (final);
 }

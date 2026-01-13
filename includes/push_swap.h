@@ -6,7 +6,7 @@
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:37:50 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/09 13:56:04 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/13 19:25:22 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	algo(t_list *head);
 void	aff_lst(t_list *head);
 void	get_target(t_list *head);
 void	get_price(t_list *head);
+t_list	*get_min(t_list *head);
 
 void	*push_list(t_list **head, t_list *new);
 

@@ -21,10 +21,9 @@ FT_PRINTF_PATH = libft/ft_printf/libftprintf.a
 
 all: $(NAME)
 
-make_lib:
-	make -C libft
 
-$(NAME): make_lib $(OBJETS)
+$(NAME): $(OBJETS)
+	make -C libft
 	$(CC) $(CFLAGS) $(OBJETS) $(LIB_PATH) $(FT_PRINTF_PATH) -o $(NAME)
 
 clean:

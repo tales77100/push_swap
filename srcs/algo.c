@@ -6,7 +6,7 @@
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 12:29:24 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/13 19:51:47 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/16 14:54:38 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,40 +67,15 @@ t_list	*highest_in_stack(t_list *head)
 	return (temp);
 }
 
-void	sorting(t_list **a, t_list **b)
-{
-	t_list	*max;
-	int	i;
-
-	sort_three(a);
-	get_price(*a);
-	get_price(*b);
-	//aff(*a, *b);
-	while (ft_lstsize(*b) > 0)
-	{
-		max = highest_in_stack(*b);
-		while (*b != max)
-		{
-			if (max->place > max->size / 2)
-				rrb(b, 0);
-			else
-				rb(b, 0);
-		}
-		i = 0;
-		pa(a, b);
-		//aff(*a, *b);
-		get_price(*b);
-		get_price(*a);
-	}
-	return ;
-}
 
 
 void	smart_push(int size_l, t_list **a, t_list **b)
 {
 	t_list	*highest;
+	int	max;
 
-	while (size_l-- > 3)
+	max = size_l;
+	while (size_l-- > 0)
 	{
 		highest = get_min(*a);
 		if (highest->place >= highest->size / 2)
@@ -120,6 +95,25 @@ void	smart_push(int size_l, t_list **a, t_list **b)
 	return ;
 }
 
+void	sorting(t_list **a, t_list **b)
+{
+	//t_list	*max;
+	int	i;
+
+	//sort_three(a);
+	get_price(*a);
+	get_price(*b);
+	//aff(*a, *b);
+	while (ft_lstsize(*b) > 0)
+	{
+		i = 0;
+		pa(a, b);
+		//aff(*a, *b);
+		get_price(*b);
+		get_price(*a);
+	}
+	return ;
+}
 void	algo(t_list *a)
 {
 	t_list *b[1];

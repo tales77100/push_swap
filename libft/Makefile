@@ -66,13 +66,13 @@ CC = cc
 
 NAME = libft.a
 
-all: $(NAME)
+all: make_printf $(NAME)
+
+$(NAME): $(OBJETS) bonus
+	ar -csr $(NAME) $(OBJETS)
 
 make_printf:
 	make -C ft_printf
-
-$(NAME): make_printf $(OBJETS) bonus
-	ar -csr $(NAME) $(OBJETS)
 
 bonus: $(OBJETS_BONUS)
 	ar -csr $(NAME) $(OBJETS_BONUS)

@@ -27,7 +27,7 @@ int	pars(char **list)
 			j++;
 		else if ((ft_isdigit(list[i][j]) == 0))
 			return (0);
-		if (atoi(list[i]) == 0 && (ft_strlen(list[i]) > 1 || list[i][j] != '0'))
+		if (ft_strtol(list[i], NULL) == LONG_MAX || ft_strtol(list[i], NULL) == LONG_MIN)
 			return (0);
 		while (list[i][j])
 			if (ft_isdigit(list[i][j++]) == 0 || ft_strlen(list[i]) > 11)

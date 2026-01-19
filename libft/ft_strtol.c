@@ -6,7 +6,7 @@
 /*   By: jsantini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 17:18:21 by jsantini          #+#    #+#             */
-/*   Updated: 2026/01/19 18:00:33 by jsantini         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:04:25 by jsantini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ long	ft_strtol(char *str, char **endp)
 	}
 	return (fin * sign);
 }
-
+/*
 int	main(int c, char **v)
 {
 	long	i;
 
 	(void)c;
 	i = ft_strtol(v[1], NULL);
-}
+}*/

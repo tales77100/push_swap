@@ -41,6 +41,7 @@ _Usage_:
 
 
 -youtube videos about various algorithm as well as push-swap oriented videos
+
 -IA was use to help understand said algorithm
 
 
@@ -49,6 +50,7 @@ _Usage_:
 
 
 -from 1 to 15, i used my own algorithm (a refined naive aproche)
+
 -from 16 to infinity, i used the radix algorithm using sorted indexes as replacement for numbers to minimize the number of moves (ie: 1 2 727 7, 727 is not 727 in my algorithm its 3)
 i check bit by bit the sorted index to put all the number in metaphorical box (aka stack b) and repeat to byte-max (aka size of list - 1 in binary).
 

@@ -1,7 +1,6 @@
 *This project has been created as part of the 42 curriculum by jsantini*
 
 
-|-------------|
 | Description |
 |-------------|
 
@@ -13,7 +12,6 @@ sa (swap the first two element of stack a), sb (swap the first two element of st
 ra (take the first element of a and put it at the end of stack a), rb (take the first element of b and put it at the end of stack b), rr (do ra and rb at the same time)
 rra (take the last element of a and put it on top of a), rrb (take the last element of b and put it on top of b), rrr (do rra and rrb at the same time)
 
-|-------------|
 | Instruction |
 |-------------|
 
@@ -21,22 +19,20 @@ _Instalation_:
 
 > git clone git@github.com:tales77100/push_swap.git; cd push_swap
 
-_Compiling_
+_Compiling_:
 
 > make
 
-_Usage_
+_Usage_:
 
 > ./push_swap "any list of number" (ie: 1 3 2 4 5 or "1 8 5 6 9 7")
 
-|-----------|
 | Resources |
 |-----------|
 
 -youtube videos about various algorithm as well as push-swap oriented videos
 -IA was use to help understand said algorithm
 
-|-----------|
 | Algorithm |
 |-----------|
 

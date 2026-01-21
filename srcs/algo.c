@@ -75,7 +75,7 @@ void	sorting(t_list **a, t_list **b)
 		pa(a, b);
 }
 
-void	sort_five(t_list **a, t_list **b)
+void	sort_small(t_list **a, t_list **b)
 {
 	t_list	*max;
 
@@ -93,10 +93,11 @@ void	sort_five(t_list **a, t_list **b)
 		pb(a, b);
 	}
 	sort_three(a);
-	pa(a, b);
-	ra(a, 0);
-	pa(a, b);
-	ra(a, 0);
+	while (*b)
+	{
+		pa(a, b);
+		ra(a, 0);
+	}
 }
 
 void	algo(t_list *a)
@@ -109,16 +110,12 @@ void	algo(t_list *a)
 		return (ft_putstr_fd("Error\n", 2));
 	get_target(a);
 	size_l = ft_lstsize(a);
-	if (size_l == 1 || is_sort(a))
+	if (is_sort(a) == 1)
 		return ;
 	if (size_l == 2 && a->value > a->next->value)
 		return ((void)sa(&a, 0));
-	else if (size_l == 2)
-		return ;
-	if (size_l == 3)
-		return (sort_three(&a));
-	if (size_l == 5)
-		return (sort_five(&a, b));
+	else if (size_l <= 15 && size_l != 2)
+		sort_small(&a, b);
 	index_stack(a);
 	sorting(&a, b);
 	ft_lstclear(&a, &free);
